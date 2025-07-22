@@ -1,0 +1,141 @@
+/* Skills.css */
+:root {
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --secondary: #10b981;
+  --orange: #f97316;
+  --purple: #8b5cf6;
+  --dark: #1e293b;
+  --light: #f8fafc;
+  --gray: #94a3b8;
+}
+
+.skills-section {
+  position: relative;
+  padding: 80px 20px;
+  min-height: auto;
+  overflow: hidden;
+}
+
+.skills-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.gradient-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.15;
+}
+
+.gradient-circle.orange {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(var(--orange), transparent);
+  top: -100px;
+  left: -100px;
+
+}
+
+.gradient-circle.purple {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(var(--purple), transparent);
+  bottom: -150px;
+  right: -100px;
+}
+
+.skills-content {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0;
+  z-index: 1;
+  background: transparent;
+  margin-top: -50px;
+}
+
+.skills-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+}
+
+.skills-title:after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.skills-subtitle {
+  font-size: 1.3rem;
+  margin: 25px 0 15px;
+  color: var(--dark);
+  font-weight: 600;
+  text-align: center;
+}
+
+.skills-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.skill-item {
+  padding: 8px 16px;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  transition: color 0.2s ease;
+}
+
+.skill-item:hover {
+  color: var(--primary);
+}
+
+.skill-icon {
+  font-size: 18px;
+  color: var(--primary);
+  transition: color 0.2s ease;
+}
+
+.skill-item:hover .skill-icon {
+  color: var(--primary-dark);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 60px 20px;
+  }
+  
+  .skills-title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+  
+  .skills-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .skill-item {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}

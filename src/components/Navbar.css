@@ -1,0 +1,147 @@
+:root {
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --secondary: #10b981;
+  --orange: #f97316;
+  --purple: #8b5cf6;
+  --blue: #3b82f6;
+  --dark: #1e293b;
+  --light: #f8fafc;
+  --gray: #94a3b8;
+  --light-gray: #e2e8f0;
+}
+
+.navbar {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--dark);
+  transition: all 0.3s ease;
+}
+
+.logo-highlight {
+  position: relative;
+  z-index: 1;
+}
+
+.logo-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, rgba(99, 102, 241, 0.3), transparent);
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.navbar-logo:hover .logo-highlight::after {
+  height: 8px;
+  background: linear-gradient(90deg, rgba(99, 102, 241, 0.4), transparent);
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 600;
+  font-size: 0.95rem;
+  position: relative;
+  padding: 5px 0;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 15px;
+  }
+  
+  .navbar-logo {
+    font-size: 1.3rem;
+  }
+  
+  .navbar-links {
+    gap: 15px;
+  }
+  
+  .nav-link {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .navbar-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+}
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--dark);
+  transition: all 0.3s ease;
+  cursor: pointer; /* Add pointer cursor to indicate clickable */
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none; /* Remove underline if using Link */
+}
+
+/* If using Link component */
+.navbar-logo:hover {
+  color: var(--dark);
+  text-decoration: none;
+}
